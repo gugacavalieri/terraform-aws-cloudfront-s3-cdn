@@ -79,6 +79,7 @@ resource "aws_s3_bucket" "origin" {
 
 module "logs" {
   source                   = "git::https://github.com/cloudposse/terraform-aws-s3-log-storage.git?ref=tags/0.5.0"
+  enabled                  = var.log_enabled
   namespace                = var.namespace
   stage                    = var.stage
   name                     = var.name

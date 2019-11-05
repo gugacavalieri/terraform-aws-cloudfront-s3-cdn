@@ -320,3 +320,9 @@ variable "wait_for_deployment" {
   default     = true
   description = "When set to 'true' the resource will wait for the distribution status to change from InProgress to Deployed"
 }
+
+variable "log_enabled" {
+  type        = bool
+  default     = true
+  description = "Flag to enable or disable the log bucket"
+}
