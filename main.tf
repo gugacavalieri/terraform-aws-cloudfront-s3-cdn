@@ -68,14 +68,15 @@ resource "aws_s3_bucket" "origin" {
 }
 
 module "logs" {
-  source                   = "git::https://github.com/cloudposse/terraform-aws-s3-log-storage.git?ref=tags/0.2.0"
+  source                   = "git::https://github.com/cloudposse/terraform-aws-s3-log-storage.git?ref=tags/0.4.1"
+  enabled                  = "${var.log_enabled}"
   namespace                = "${var.namespace}"
   stage                    = "${var.stage}"
   name                     = "${var.name}"
   delimiter                = "${var.delimiter}"
   attributes               = ["${compact(concat(var.attributes, list("logs")))}"]
   tags                     = "${var.tags}"
-  prefix                   = "${var.log_prefix}"
+  lifecycle_prefix         = "${var.log_prefix}"
   standard_transition_days = "${var.log_standard_transition_days}"
   glacier_transition_days  = "${var.log_glacier_transition_days}"
   expiration_days          = "${var.log_expiration_days}"
