@@ -276,12 +276,6 @@ variable "web_acl_id" {
   description = "ID of the AWS WAF web ACL that is associated with the distribution"
 }
 
-variable "wait_for_deployment" {
-  type        = "string"
-  default     = "true"
-  description = "When set to 'true' the resource will wait for the distribution status to change from InProgress to Deployed"
-}
-
 variable "log_enabled" {
   type        = "string"
   default     = "false"
