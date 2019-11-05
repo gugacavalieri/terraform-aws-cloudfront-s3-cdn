@@ -278,6 +278,6 @@ variable "web_acl_id" {
 
 variable "log_enabled" {
   type        = "string"
-  default     = "false"
+  default     = "true"
   description = "Flag to enable or disable the log bucket"
 }
