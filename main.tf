@@ -110,11 +110,11 @@ resource "aws_cloudfront_distribution" "default" {
   price_class         = "${var.price_class}"
   depends_on          = ["aws_s3_bucket.origin"]
 
-  logging_config = {
-    include_cookies = "${var.log_include_cookies}"
-    bucket          = "${module.logs.bucket_domain_name}"
-    prefix          = "${var.log_prefix}"
-  }
+  # logging_config = {
+  #   include_cookies = "${var.log_include_cookies}"
+  #   bucket          = "${module.logs.bucket_domain_name}"
+  #   prefix          = "${var.log_prefix}"
+  # }
 
   aliases = ["${var.aliases}"]
 
